@@ -2,7 +2,7 @@
 
 ## Демонстрация системы
 
-TODO Ссылка на видео
+[Video](https://github.com/Mayster98/furniture_order/blob/main/video/project_demo.mkv)
 
 ## Запуск системы
 Перед запуском нужно убедиться, что Docker установлен и запущен.
