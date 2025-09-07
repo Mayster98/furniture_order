@@ -9,6 +9,8 @@ TODO Ссылка на видео
 Далее выполнить:
 ```bash~~~~
 git clone https://github.com/Mayster98/furniture_order.git
+```
+```bash~~~~
 docker-compose up
 ```
 
