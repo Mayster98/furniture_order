@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="furniture_order_action" model="ir.actions.act_window">
+        <field name="name">Заказы</field>
+        <field name="res_model">furniture.order</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="order_line_view_list" model="ir.ui.view">
+        <field name="name">furniture.order.line.list</field>
+        <field name="model">furniture.order.line</field>
+        <field name="arch" type="xml">
+            <list string="Строка заказа">
+                <field name="serial_number" string="Номер изделия" width="200"/>
+                <field name="product_id" width="200"/>
+                <field name="quantity" width="80"/>
+                <field name="packed_qty" width="80"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="order_line_view_form" model="ir.ui.view">
+        <field name="name">furniture.order.line.form</field>
+        <field name="model">furniture.order.line</field>
+        <field name="arch" type="xml">
+            <form string="Строка заказа" col="3">
+                <group>
+                    <field name="serial_number" string="Номер изделия" />
+                    <field name="product_id"/>
+                    <field name="quantity"/>
+                </group>
+<!--                <field name="packed_qty"/>-->
+            </form>
+        </field>
+    </record>
+
+    <record id="order_view_list" model="ir.ui.view">
+        <field name="name">furniture.order.list</field>
+        <field name="model">furniture.order</field>
+        <field name="arch" type="xml">
+            <list string="Заказ">
+                <field name="order_id"/>
+                <field name="customer_id"/>
+                <field name="picker_id"/>
+                <field name="order_date"/>
+                <field name="status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="order_view_form" model="ir.ui.view">
+        <field name="name">furniture.order.form</field>
+        <field name="model">furniture.order</field>
+        <field name="arch" type="xml">
+            <form string="Заказ">
+                <sheet>
+                    <group>
+                        <field name="order_id" readonly="1"/>
+                        <field name="customer_id"/>
+                        <field name="picker_id"/>
+                        <field name="order_date"/>
+                        <field name="status" readonly="1"/>
+                    </group>
+                    <notebook>
+                        <page string="Состав заказа">
+                            <field name="order_line_ids"/>
+                        </page>
+                        <page string="Упаковка">
+                            <field name="order_line_ids" readonly="1"/>
+                            <button name="action_start_packing" string="Начать упаковку" type="object" />
+                            <group>
+                                <field name="current_serial_input" placeholder="Введите номер изделия"/>
+                                <button name="pack_product_by_serial" string="Отметить упакованным" type="object"/>
+                            </group>
+                            <button name="action_finish_packing" string="Завершить упаковку"
+                                    type="object" class="btn btn-success"/>
+                            <button name="action_reset_packing" string="Отменить упаковку"
+                                    type="object" class="btn btn-danger"/>
+                            <button name="print_transport_label" string="Печать этикетки" type="object"
+                                    class="btn-primary"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

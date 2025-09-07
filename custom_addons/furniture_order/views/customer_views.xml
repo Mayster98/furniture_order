@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="furniture_сustomer_action" model="ir.actions.act_window">
+        <field name="name">Покупатели</field>
+        <field name="res_model">furniture.customer</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="сustomer_view_list" model="ir.ui.view">
+        <field name="name">furniture.customer.list</field>
+        <field name="model">furniture.customer</field>
+        <field name="arch" type="xml">
+            <list string="Покупатели">
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="customer_view_form" model="ir.ui.view">
+        <field name="name">furniture.customer.form</field>
+        <field name="model">furniture.customer</field>
+        <field name="arch" type="xml">
+            <form string="Покупатели">
+                <group>
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

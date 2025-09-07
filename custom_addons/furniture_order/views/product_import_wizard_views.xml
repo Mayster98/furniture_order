@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="product_import_wizard_view_form" model="ir.ui.view">
+        <field name="name">furniture.product.import.wizard.form</field>
+        <field name="model">furniture.product.import.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Импорт товаров из CSV">
+                <group>
+                    <field name="csv_file" filename="filename" required="1"/>
+                </group>
+                <footer>
+                    <button string="Импортировать" type="object" name="action_import" class="btn-primary"/>
+                    <button string="Отмена" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_import_wizard_action" model="ir.actions.act_window">
+        <field name="name">Импорт товаров из CSV</field>
+        <field name="res_model">furniture.product.import.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

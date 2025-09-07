@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="furniture_picker_action" model="ir.actions.act_window">
+        <field name="name">Сборщики</field>
+        <field name="res_model">furniture.picker</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="picker_view_list" model="ir.ui.view">
+        <field name="name">furniture.picker.list</field>
+        <field name="model">furniture.picker</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="email"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="picker_view_form" model="ir.ui.view">
+        <field name="name">furniture.picker.form</field>
+        <field name="model">furniture.picker</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

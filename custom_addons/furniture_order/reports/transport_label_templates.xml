@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<odoo>
+  <template id="report_transport_label">
+    <t t-call="web.basic_layout">
+      <t t-foreach="docs" t-as="doc">
+        <div class="page">
+          <h2>Транспортная этикетка</h2>
+          <p><strong>Номер заказа:</strong> <span t-esc="doc.order_id"/></p>
+
+          <!-- Штрих-код для номера заказа -->
+<!--          <span style="margin-left:-60px;">-->
+<!--             <img t-att-src="'/report/barcode/?tyspe=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', doc.order_id, 600, 100)"-->
+<!--                  style="width:350px;height:60px;"/>-->
+<!--          </span>-->
+
+          <p><strong>Покупатель:</strong> <span t-esc="doc.customer_id.name"/></p>
+          <p><strong>Дата заказа:</strong> <span t-esc="doc.order_date"/></p>
+          <p><strong>Состав заказа:</strong></p>
+          <ul>
+            <t t-foreach="doc.order_line_ids" t-as="line">
+              <li><span t-esc="line.product_id.name"/> — <span t-esc="line.quantity"/> шт.</li>
+            </t>
+          </ul>
+        </div>
+      </t>
+    </t>
+  </template>
+</odoo>

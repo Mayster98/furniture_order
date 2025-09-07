@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="furniture_product_action" model="ir.actions.act_window">
+        <field name="name">Товары</field>
+        <field name="res_model">furniture.product</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="product_view_list" model="ir.ui.view">
+        <field name="name">furniture.product.list</field>
+        <field name="model">furniture.product</field>
+        <field name="arch" type="xml">
+            <list string="Товары">
+                <field name="serial_number"/>
+                <field name="status"/>
+                <field name="name"/>
+                <field name="color"/>
+                <field name="weight"/>
+                <field name="width"/>
+                <field name="height"/>
+                <field name="depth"/>
+                <field name="price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="product_view_form" model="ir.ui.view">
+        <field name="name">furniture.product.form</field>
+        <field name="model">furniture.product</field>
+        <field name="arch" type="xml">
+            <form string="Товары">
+                <sheet>
+                    <group>
+                        <field name="serial_number" readonly="1"/>
+                        <field name="status"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="color"/>
+                        <field name="weight"/>
+                        <field name="width"/>
+                        <field name="height"/>
+                        <field name="depth"/>
+                        <field name="price"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

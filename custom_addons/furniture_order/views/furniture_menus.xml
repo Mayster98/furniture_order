@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem id="furniture_menu_root" name="Мебельная фабрика">
+        <menuitem id="furniture_order_first_level_menu" name="Сборка">
+            <menuitem id="furniture_order_menu_action" action="furniture_order_action"/>
+        </menuitem>
+        <menuitem id="furniture_settings_first_level_menu" name="Настройки">
+            <menuitem id="furniture_products_menu_action" action="furniture_product_action"/>
+            <menuitem id="furniture_customer_menu_action" action="furniture_сustomer_action"/>
+            <menuitem id="furniture_pickers_menu_action" action="furniture_picker_action"/>
+            <menuitem id="menu_furniture_product_import" action="product_import_wizard_action"
+                      name="Импорт товаров"/>
+        </menuitem>
+    </menuitem>
+</odoo>

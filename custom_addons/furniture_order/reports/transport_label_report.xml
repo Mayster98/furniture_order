@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!--    Report Function in Expense -->
+    <record id="action_report_transport_label" model="ir.actions.report">
+        <field name="name">Expense Report</field>
+        <field name="model">furniture.order</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">furniture_order.report_transport_label</field>
+        <field name="report_file">furniture_order.report_transport_label</field>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

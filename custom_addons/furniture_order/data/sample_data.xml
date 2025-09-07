@@ -1,0 +1,199 @@
+<odoo>
+    <!-- Покупатели -->
+    <record id="customer_1" model="furniture.customer">
+        <field name="name">Иван Иванов</field>
+        <field name="phone">+7 900 111 22 33</field>
+        <field name="email">ivanov@example.com</field>
+    </record>
+    <record id="customer_2" model="furniture.customer">
+        <field name="name">Мария Петрова</field>
+        <field name="phone">+7 900 444 55 66</field>
+        <field name="email">petrova@example.com</field>
+    </record>
+    <record id="customer_3" model="furniture.customer">
+        <field name="name">Алексей Смирнов</field>
+        <field name="phone">+7 900 777 88 99</field>
+        <field name="email">smirnov@example.com</field>
+    </record>
+
+    <!-- Сборщики -->
+    <record id="picker_1" model="furniture.picker">
+        <field name="name">Александр Козлов</field>
+        <field name="email">kozlov@example.com</field>
+    </record>
+    <record id="picker_2" model="furniture.picker">
+        <field name="name">Елена Новикова</field>
+        <field name="email">novikova@example.com</field>
+    </record>
+
+    <!-- Товары -->
+    <record id="product_1" model="furniture.product">
+        <field name="name">Стул</field>
+        <field name="description">Деревянный стул</field>
+        <field name="color">blue</field>
+        <field name="weight">3500</field>
+        <field name="width">40</field>
+        <field name="height">90</field>
+        <field name="depth">40</field>
+        <field name="price">1500</field>
+    </record>
+    <record id="product_2" model="furniture.product">
+        <field name="name">Стол</field>
+        <field name="description">Обеденный стол</field>
+        <field name="color">undefined</field>
+        <field name="weight">20000</field>
+        <field name="width">120</field>
+        <field name="height">75</field>
+        <field name="depth">80</field>
+        <field name="price">7000</field>
+    </record>
+    <record id="product_3" model="furniture.product">
+        <field name="name">Тумба</field>
+        <field name="description">Прикроватная тумба</field>
+        <field name="color">black</field>
+        <field name="weight">8000</field>
+        <field name="width">50</field>
+        <field name="height">60</field>
+        <field name="depth">40</field>
+        <field name="price">3500</field>
+    </record>
+    <record id="product_4" model="furniture.product">
+        <field name="name">Кресло</field>
+        <field name="description">Удобное кресло</field>
+        <field name="color">red</field>
+        <field name="weight">7000</field>
+        <field name="width">70</field>
+        <field name="height">100</field>
+        <field name="depth">70</field>
+        <field name="price">4500</field>
+    </record>
+    <record id="product_5" model="furniture.product">
+        <field name="name">Шкаф</field>
+        <field name="description">Шкаф для одежды</field>
+        <field name="color">green</field>
+        <field name="weight">25000</field>
+        <field name="width">100</field>
+        <field name="height">200</field>
+        <field name="depth">60</field>
+        <field name="price">12000</field>
+    </record>
+    <record id="product_6" model="furniture.product">
+        <field name="name">Полка</field>
+        <field name="description">Настенная полка</field>
+        <field name="color">blue</field>
+        <field name="weight">3000</field>
+        <field name="width">80</field>
+        <field name="height">20</field>
+        <field name="depth">15</field>
+        <field name="price">1200</field>
+    </record>
+    <record id="product_7" model="furniture.product">
+        <field name="name">Стол письменный</field>
+        <field name="description">Письменный стол</field>
+        <field name="color">yellow</field>
+        <field name="weight">18000</field>
+        <field name="width">110</field>
+        <field name="height">75</field>
+        <field name="depth">60</field>
+        <field name="price">8000</field>
+    </record>
+    <record id="product_8" model="furniture.product">
+        <field name="name">Табурет</field>
+        <field name="description">Простой табурет</field>
+        <field name="color">black</field>
+        <field name="weight">2500</field>
+        <field name="width">35</field>
+        <field name="height">45</field>
+        <field name="depth">35</field>
+        <field name="price">900</field>
+    </record>
+    <record id="product_9" model="furniture.product">
+        <field name="name">Книжный шкаф</field>
+        <field name="description">Шкаф для книг</field>
+        <field name="color">black</field>
+        <field name="weight">22000</field>
+        <field name="width">90</field>
+        <field name="height">180</field>
+        <field name="depth">40</field>
+        <field name="price">11000</field>
+    </record>
+    <record id="product_10" model="furniture.product">
+        <field name="name">Диван</field>
+        <field name="description">Удобный диван</field>
+        <field name="color">red</field>
+        <field name="weight">35000</field>
+        <field name="width">200</field>
+        <field name="height">90</field>
+        <field name="depth">100</field>
+        <field name="price">25000</field>
+    </record>
+
+    <!-- Заказы -->
+    <record id="order_1" model="furniture.order">
+        <field name="customer_id" ref="customer_1"/>
+        <field name="order_date">2024-06-01</field>
+        <field name="status">draft</field>
+    </record>
+    <record id="order_1_line_1" model="furniture.order.line">
+        <field name="order_id" ref="order_1"/>
+        <field name="product_id" ref="product_2"/>
+        <field name="quantity">1</field>
+        <field name="packed_qty">0</field>
+    </record>
+
+    <record id="order_2" model="furniture.order">
+        <field name="customer_id" ref="customer_2"/>
+        <field name="order_date">2024-06-02</field>
+        <field name="status">draft</field>
+        <field name="picker_id" ref="picker_1"/>
+    </record>
+    <record id="order_2_line_1" model="furniture.order.line">
+        <field name="order_id" ref="order_2"/>
+        <field name="product_id" ref="product_3"/>
+        <field name="quantity">2</field>
+        <field name="packed_qty">0</field>
+    </record>
+    <record id="order_2_line_2" model="furniture.order.line">
+        <field name="order_id" ref="order_2"/>
+        <field name="product_id" ref="product_4"/>
+        <field name="quantity">1</field>
+        <field name="packed_qty">0</field>
+    </record>
+
+    <record id="order_3" model="furniture.order">
+        <field name="customer_id" ref="customer_3"/>
+        <field name="order_date">2024-06-03</field>
+        <field name="status">draft</field>
+        <field name="picker_id" ref="picker_2"/>
+    </record>
+    <record id="order_3_line_1" model="furniture.order.line">
+        <field name="order_id" ref="order_3"/>
+        <field name="product_id" ref="product_5"/>
+        <field name="quantity">1</field>
+        <field name="packed_qty">0</field>
+    </record>
+    <record id="order_3_line_2" model="furniture.order.line">
+        <field name="order_id" ref="order_3"/>
+        <field name="product_id" ref="product_6"/>
+        <field name="quantity">4</field>
+        <field name="packed_qty">0</field>
+    </record>
+
+    <record id="order_4" model="furniture.order">
+        <field name="customer_id" ref="customer_1"/>
+        <field name="order_date">2024-06-04</field>
+        <field name="status">draft</field>
+    </record>
+    <record id="order_4_line_1" model="furniture.order.line">
+        <field name="order_id" ref="order_4"/>
+        <field name="product_id" ref="product_7"/>
+        <field name="quantity">2</field>
+        <field name="packed_qty">0</field>
+    </record>
+    <record id="order_4_line_2" model="furniture.order.line">
+        <field name="order_id" ref="order_4"/>
+        <field name="product_id" ref="product_8"/>
+        <field name="quantity">6</field>
+        <field name="packed_qty">0</field>
+    </record>
+</odoo>

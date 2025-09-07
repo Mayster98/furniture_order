@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_furniture_product,furniture.product,model_furniture_product,base.group_user,1,1,1,1
+access_furniture_customer,furniture.customer,model_furniture_customer,base.group_user,1,1,1,1
+access_furniture_picker,furniture.picker,model_furniture_picker,base.group_user,1,1,1,1
+access_furniture_order,furniture.order,model_furniture_order,base.group_user,1,1,1,1
+access_furniture_order_line,furniture.order.line,model_furniture_order_line,base.group_user,1,1,1,1
+access_furniture_product_import_wizard,access_furniture_product_import_wizard,model_furniture_product_import_wizard,base.group_user,1,1,1,1
